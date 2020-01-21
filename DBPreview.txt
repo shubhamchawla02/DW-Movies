@@ -74,7 +74,7 @@ DWTables:
 		- year
 		- month
 		- dayOfWeek
-		- hour???
+		- hour
 
 	DIMMovie:
 		- movieId

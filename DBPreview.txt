@@ -66,22 +66,15 @@ Tables:
 DWTables:
 	DIMCustomer:
 		- id
+		- age
 		- gender
 	
-	DIMTRansaction:
-		- id
-		- customerId
-		- movieId
-		- studentTicketsQty
-		- adultTicketsQty
-		- totalCost
-		- dateId
-
 	DIMDate:
 		- dateId
 		- year
 		- month
 		- dayOfWeek
+		- hour???
 
 	DIMMovie:
 		- movieId
@@ -90,16 +83,25 @@ DWTables:
 		- isAdult
 		- rating
 
-	DIMGeneres: -create via JS from file
+	FFGeneres: -create via JS from file
 		- movieId
 		- genere
 
-	DIMCast: ?
+	FFCast: ?
 		- id
 		- movieId
 		- personId
 		- category (profession)
 		- primaryName
+
+	FACTTRansaction:
+		- id
+		- customerId
+		- movieId
+		- studentTicketsQty
+		- adultTicketsQty
+		- totalCost
+		- dateId
 
 
 As a result we obtain fact table with the IDs of the DIMTables which describe it

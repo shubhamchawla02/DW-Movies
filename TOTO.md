@@ -6,3 +6,5 @@ TODO:
 5. OLAP Cube
 6. Excel
 7. PowerBI
+
+Project 2 and 3

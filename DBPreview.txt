@@ -1,0 +1,105 @@
+Tables: 
+	akas: USELESS
+		- movieId
+		- ordering
+		- region
+		- title
+		- language
+		- types
+		- attributes
+		- isOriginalTitle
+
+	basics: merge-with-titleprincipals
+		= nconst
+		+ primaryName
+		- birthYear
+		- deathYear
+		- primaryProfession
+		- knownForTitles
+
+	costs: merge-with-transaction
+		= id
+		= studentprice
+		= adultprice
+
+	customer:
+		= id
+		- firstname
+		- lastname 
+		- email
+		+ gender
+
+	titlebasics: merge-titleratings
+		= movieId
+		+ titletype
+		+ primaryTitle
+		- originalTitle
+		+ isAdult
+		? startYear
+		? runTimeMinutes
+		+ generes //problematic
+
+	titleprincipals: merge-with-basics
+		= movieId
+		- ordering
+		= nconst
+		+ category
+		- job
+		- characters
+
+	titleratings: merge-titlebasics
+		= movieId
+		+ averageRating
+		- NumberOfVotes
+
+	transactions: merge-with-costs
+		- id
+		= customerId
+		+ studentTicketsQty
+		+ adultTicketsQty
+		= costType
+		= movieId
+		+ date
+
+----
+
+DWTables:
+	DIMCustomer:
+		- id
+		- gender
+	
+	DIMTRansaction:
+		- id
+		- customerId
+		- movieId
+		- studentTicketsQty
+		- adultTicketsQty
+		- totalCost
+		- dateId
+
+	DIMDate:
+		- dateId
+		- year
+		- month
+		- dayOfWeek
+
+	DIMMovie:
+		- movieId
+		- titleType
+		- primaryTitle
+		- isAdult
+		- rating
+
+	DIMGeneres: -create via JS from file
+		- movieId
+		- genere
+
+	DIMCast: ?
+		- id
+		- movieId
+		- personId
+		- category (profession)
+		- primaryName
+
+
+As a result we obtain fact table with the IDs of the DIMTables which describe it

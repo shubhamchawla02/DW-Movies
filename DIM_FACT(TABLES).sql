@@ -60,14 +60,16 @@ FROM [title.basics] TB JOIN [dbo].[title.ratings] TR ON TR.tconst=TB.tconst
 
 
 ----------FACT CAST
--- Person id ?
+
 CREATE TABLE FCast(
-	id [nvarchar] (40) NOT NULL,
-	movieid [nvarchar] (40) NOT NULL,
+	id int NOT NULL IDENTITY(1, 1),
+	personid [nvarchar] (200) NOT NULL,
+	movieid [nvarchar] (200) NOT NULL,
 	category [nvarchar] (200) NOT NULL,
 	primaryName [nvarchar] (100) NOT NULL
 )
 
+INSERT INTO FCast 
 SELECT TP.nconst, tconst, category,primaryName 
 FROM [dbo].[principals] TP JOIN [dbo].[name.basics] TB
 ON TP.nconst= TB.nconst

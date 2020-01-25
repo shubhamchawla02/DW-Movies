@@ -1,9 +1,9 @@
 USE DWCinema;
 --------------DIM Customer
 ---- AGE ?
-
+DROP TABLE DIMCustomer
 CREATE TABLE DIMCustomer(
-	id [nvarchar] (50) NOT NULL,
+	id [int] NOT NULL,
 	gender [nvarchar] (50) NOT NULL,
 	age [int],
 	CONSTRAINT id_pk PRIMARY KEY (id)
@@ -53,8 +53,8 @@ CREATE TABLE DIMMovie(
 
 CREATE TABLE FFCast(
 	id int NOT NULL IDENTITY(1, 1),
-	personid [nvarchar] (200) NOT NULL,
-	movieid [nvarchar] (200) NOT NULL,
+	personid [nvarchar] (50) NOT NULL,
+	movieid [nvarchar] (50) NOT NULL,
 	profession [nvarchar] (200) NOT NULL,
 	primaryName [nvarchar] (100) NOT NULL
 )
@@ -62,4 +62,14 @@ CREATE TABLE FFCast(
 CREATE TABLE FFGenres(
 	[movideId] [nvarchar](40),
 	[genre] [nvarchar](20)
+);
+
+CREATE TABLE FTransaction(
+	[id] [int] NOT NULL,
+	customerId [int] NOT NULL,
+	movieId [varchar](50) NOT NULL,
+	studentTicketsQty [int] NOT NULL,
+	adultTicketsQty [int] NOT NULL,
+	totalCost [float] NOT NULL,
+	dateId [char](8) NOT NULL
 );

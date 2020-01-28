@@ -1,0 +1,68 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3fcea0c7-359b-4516-b2c8-d24a42f54531" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DW Cinema</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>F Transaction</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d834af80-9289-4d68-98f6-8ea45c308ed5">
+          <ID>F Transaction</ID>
+          <Name>F Transaction</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="13c05f8d-e152-41d1-a15c-3e007f34be23">
+            <DataSourceViewID>DW Cinema</DataSourceViewID>
+            <TableID>dbo_FTransaction</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FF Genres</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a2dfb338-fe79-4fc1-840c-dfabbc5fff2c">
+          <ID>FF Genres</ID>
+          <Name>FF Genres</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9803b7f2-d11b-4014-b28c-9f4a8265683b">
+            <DataSourceViewID>DW Cinema</DataSourceViewID>
+            <TableID>dbo_FFGenres</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FF Cast</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8921817f-0812-480e-baa2-55a0bad037b7">
+          <ID>FF Cast</ID>
+          <Name>FF Cast</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="28c8edb6-25ff-437a-99a8-98c93935bb90">
+            <DataSourceViewID>DW Cinema</DataSourceViewID>
+            <TableID>dbo_FFCast</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>FF Genres 1</ID>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

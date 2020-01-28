@@ -17,11 +17,10 @@ DECLARE @StartDate DATE = '20010101',
 CREATE TABLE DIMDate
 (
   [date]       DATE NOT NULL, 
-  dateid     AS CONVERT(CHAR(8), [date], 112) PERSISTED NOT NULL,
+  dateid     AS CONVERT(CHAR(10),  [date], 101) PERSISTED NOT NULL,
   [day]        AS DATEPART(DAY,      [date]),
   [month]      AS DATEPART(MONTH,    [date]),
   [year]       AS DATEPART(YEAR,     [date]),
-  Style101     AS CONVERT(CHAR(10),  [date], 101),
   CONSTRAINT CompKey_ID_NAME PRIMARY KEY (date, DateID)
   );
 
